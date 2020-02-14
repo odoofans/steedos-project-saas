@@ -3,31 +3,23 @@ label: 合同
 icon: contract
 enable_files: true
 enable_search: true
-enable_notes: false
 enable_events: true
-enable_audit: true
+enable_tasks: true
 enable_api: true
-enable_instances: true
-enable_trash: true
+enable_chatter: true
+enable_audit: true
 fields:
+  name:
+    label: 合同名称
+    type: text
+    required: true
+    searchable: true
+    index: true
   "no":
     type: text
     label: 合同编号
     sortable: true
     filterable: true
-  serial_number:
-    type: autonumber
-    formula: "{0}"
-    label: 流水号
-    filterable: true
-    omit: true
-    readonly: true
-  create_date:
-    label: 登记日期
-    type: date
-    sortable: true
-    filterable: true
-    defaultValue: "{now}"
   company_id:
     label: 我方单位
     required: false
@@ -44,45 +36,18 @@ fields:
     searchable: true
     reference_to: accounts
     required: true
-  project:
-    type: lookup
-    label: 项目
-    filterable: true
-    reference_to: account_project
   contract_type:
     type: lookup
     relatedList: true
     label: 分类
     reference_to: contract_types
     required: true
-  business_category:
-    type: lookup
-    label: 业务分类
-    reference_to: business_categories
-    filters: [["enablestate", "eq", "2"]]
-  name:
-    label: 合同名称
-    type: text
-    required: true
-    searchable: true
-    index: true
-  is_bidding:
-    type: select
-    label: 是否招投标
-    options:
-      - label: 已公开招投标
-        value: 已公开招投标
-      - label: 已邀请招投标
-        value: 已邀请招投标
-      - label: 已询价比价
-        value: 已询价比价
-      - label: 无需招投标
-        value: 无需招投标
-    allowedValues:
-      - 已公开招投标
-      - 已邀请招投标
-      - 已询价比价
-      - 无需招投标
+  create_date:
+    label: 登记日期
+    type: date
+    sortable: true
+    filterable: true
+    defaultValue: "{now}"
   bop:
     type: select
     label: 收支类别
@@ -100,26 +65,11 @@ fields:
       - 收款合同
       - 收付款合同
       - 无金额合同
-  is_approve_by_boss:
-    label: 董事长审批
-    type: select
-    options:
-      - label: 是
-        value: 是
-      - label: 否
-        value: 否
-    readonly: true
-    omit: true
   applicant:
     label: 经办人
     type: lookup
     searchable: true
     reference_to: users
-  applicant_organization:
-    label: 经办部门
-    type: lookup
-    searchable: true
-    reference_to: department
   owner:
     label: 执行人
     sortable: true
@@ -127,31 +77,6 @@ fields:
     reference_to: users
     omit: false
     hidden: false
-  owner_organization:
-    label: 执行人部门
-    type: lookup
-    searchable: true
-    reference_to: department
-    depend_on:
-      - company_id
-    optionsFunction: !!js/function |
-      function(values) {
-        var _options = [];
-        var companyId = values.company_id;
-        if (!companyId) {
-          return;
-        }
-        if(!_.isString(companyId)) {
-          companyId = values.company_id._id
-        }
-        var departments = Creator.odata.query('department', {$filter: "(company_id eq '" + companyId + "')", $select: 'name'}, true);
-        if (departments){
-          _.each(departments, function(item){
-            _options.push({value: item._id, label: item.name});
-          })
-        }
-        return _options;
-      }
   created_by:
     label: 创建人
     sortable: true
@@ -162,15 +87,6 @@ fields:
     sortable: true
     type: lookup
     reference_to: users
-  virtual_contract:
-    label: 付款依据
-    type: select
-    options:
-      - label: 合同
-        value: 合同
-      - label: 非合同
-        value: 非合同
-    defaultValue: 合同
   contract_object:
     label: 合同标的
     type: textarea
@@ -188,12 +104,6 @@ fields:
     scale: 2
     required: true
     sortable: true
-  currency_type:
-    label: 币种
-    type: lookup
-    relatedList: true
-    group: 合同主要内容
-    reference_to: currency
   amount_type:
     type: select
     label: 金额类型
@@ -291,11 +201,6 @@ fields:
         value: 履行完
       - label: 已取消
         value: 已取消
-  stamp_state:
-    type: text
-    label: 盖章状态
-    group: 盖章信息
-    searchable: true
   paid_amount:
     label: 已支付总金额
     type: number
@@ -352,53 +257,6 @@ fields:
     scale: 2
     sortable: true
     defaultValue: 0
-  change_before:
-    label: 变更前合同
-    type: lookup
-    group: 合同变更
-    reference_to: contracts
-  change_after:
-    label: 变更后合同
-    type: lookup
-    group: 合同变更
-    reference_to: contracts
-  contract_action_type:
-    label: 合同类型
-    type: select
-    group: 合同变更
-    options:
-      - label: 新增
-        value: 新增
-      - label: 变更
-        value: 变更
-    readonly: true
-    omit: true
-  archive_date:
-    label: 备案文件日期
-    type: date
-    group: 合同备案信息
-    sortable: true
-    filterable: true
-    name: archive_date
-  original_file:
-    label: 备案文件类型
-    type: select
-    group: 合同备案信息
-    options:
-      - label: 原件
-        value: 原件
-      - label: 扫描件
-        value: 扫描件
-      - label: 复印件
-        value: 复印件
-    name: original_file
-  revocation_date:
-    label: 废止日期
-    type: date
-    group: 合同备案信息
-    sortable: true
-    filterable: true
-    name: revocation_date
 list_views:
   all:
     label: 所有合同

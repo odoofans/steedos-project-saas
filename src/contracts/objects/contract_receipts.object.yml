@@ -63,10 +63,6 @@ fields:
     required: true
     sortable: true
     name: amount
-  currency:
-    label: 收款币种
-    type: lookup
-    reference_to: currency
   due_date:
     label: 计划收款时间
     type: date

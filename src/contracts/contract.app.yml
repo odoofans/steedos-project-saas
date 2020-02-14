@@ -10,8 +10,6 @@ objects:
   - contacts
   - contract_payments
   - contract_receipts
-  - account_payable
-  - account_receivable
   - instances
   - tasks
   - events
@@ -49,14 +47,6 @@ admin_menus:
   - _id: currency_rate
     name: 汇率
     object_name: currency_rate
-    parent: contracts
-  - _id: bank
-    name: 银行
-    object_name: bank
-    parent: contracts
-  - _id: bank_type
-    name: 银行类别
-    object_name: bank_type
     parent: contracts
   - _id: account_tax
     name: 税码

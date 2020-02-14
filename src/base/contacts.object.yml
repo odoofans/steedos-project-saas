@@ -70,6 +70,7 @@ list_views:
       - name
       - account
       - email
+      - mobile
       - phone
   recent:
     label: 最近查看
@@ -77,6 +78,7 @@ list_views:
       - name
       - account
       - email
+      - mobile
       - phone
   mine:
     label: 我的联系人
@@ -84,6 +86,7 @@ list_views:
       - name
       - account
       - email
+      - mobile
       - phone
     filter_scope: mine
 permission_set:

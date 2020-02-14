@@ -27,6 +27,14 @@ fields:
     type: date
     sortable: true
     name: due_date
+  finished:
+    label: 已完成
+    type: boolean
+  real_date:
+    label: 实际付款时间
+    type: date
+    sortable: true
+    name: real_date
   contract:
     label: 合同
     type: master_detail
@@ -40,49 +48,6 @@ fields:
     omit: false
     hidden: false
     type: lookup
-  account:
-    type: lookup
-    relatedList: true
-    label: 收款方
-    searchable: true
-    reference_to: accounts
-    create: false
-    depend_on:
-      - contract
-    optionsFunction: !!js/function |
-      function(values) {
-        var _options = [];
-        var contractId = values.contract;
-        if (!contractId) {
-          return;
-        }
-
-        if(!_.isString(contractId)){
-          contractId = values.contract._id
-        }
-        
-        var contract = Creator.odata.get('contracts', contractId, 'othercompany');
-        if (contract) {
-          var qydxIds = contract.othercompany
-          if(_.isArray(qydxIds) && qydxIds.length > 0){
-            var filters = [];
-            _.forEach(qydxIds, function(qydxId){
-                filters.push("(_id eq '" + qydxId + "')")
-            })
-            var $filter = filters.join(" or ")
-            var accounts = Creator.odata.query('accounts', {$filter: $filter, $select: 'name'}, true);
-            if (accounts){
-              _.each(accounts, function(item){
-                _options.push({value: item._id, label: item.name});
-              })
-            }
-          }
-        }
-        return _options;
-      }
-  finished:
-    label: 已完成
-    type: boolean
 list_views:
   all:
     label: 所有
@@ -93,6 +58,7 @@ list_views:
       - due_date
       - account
       - finished
+      - real_date
     filter_scope: space
     sort:
       - - due_date

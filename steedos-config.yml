@@ -1,0 +1,36 @@
+datasources:
+  default:
+    connection:
+      url: ${MONGO_URL}
+    objectFiles:
+      - "./src/base/**"
+      - "./src/contracts/**"
+      - "./src/crm/**"
+      - "./src/oa/**"
+    appFiles:
+      - "./src/**"
+public:
+  cfs:
+    store: ${ENV_CFS_STORE}
+  webservices:
+    workflow:
+      url: ${ENV_WORKFLOW_URL}
+    creator:
+      url: ${ENV_CREATOR_URL}
+  is_group_company: true
+  accounts:
+    loginExpirationInDays: 1825
+plugins:
+  - "@steedos/accounts"
+cfs:
+  aliyun:
+    region: ${ENV_CFS_ALIYUN_REGION}
+    bucket: ${ENV_CFS_ALIYUN_BUCKET}
+    accessKeyId: ${ENV_CFS_ALIYUN_ACCESSKEYID}
+    secretAccessKey: ${ENV_CFS_ALIYUN_SECRETACCESSKEY}
+cron:
+  instancerecordqueue_interval: 10000
+billing:
+  appid: ${ENV_BILLING_APPID}
+  mch_id: ${ENV_BILLING_MCH_ID}
+  partner_key: ${ENV_BILLING_PARTNER_KEY}

@@ -1,0 +1,11 @@
+_id: oa
+name: 华炎办公
+description: ''
+icon_slds: opportunity
+is_creator: true
+objects:
+  - oa_home
+  - instances
+  - cms
+  - tasks
+  - events

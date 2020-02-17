@@ -42,6 +42,13 @@ fields:
     sortable: true
     name: contract
     filterable: true
+  account:
+    type: lookup
+    label: 付款方
+    reference_to: accounts  
+    relatedList: true
+    searchable: true
+    omit: true
   company_id:
     required: true
     omit: false

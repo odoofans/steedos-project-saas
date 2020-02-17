@@ -43,6 +43,13 @@ fields:
     sortable: true
     name: contract
     filterable: true
+  account:
+    type: lookup
+    label: 收款方
+    omit: true
+    reference_to: accounts 
+    relatedList: true
+    searchable: true
   company_id:
     required: true
     omit: false

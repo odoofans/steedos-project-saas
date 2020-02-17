@@ -1,36 +1,25 @@
 _id: contracts
 name: 合同
-description: 合同、收付款、单位、联系人、任务、日历
-icon_slds: approval
+description: 管理合同及收付款。
+icon_slds: contract_line_item
 is_creator: true
-objects: 
-  - contracts_home
+sort: 200
+objects:
   - contracts
-  - accounts
-  - contacts
   - contract_payments
   - contract_receipts
-  - instances
+  - accounts
+  - contacts
+  - contract_types
   - tasks
   - events
   - reports
 mobile_objects: 
-  - contracts_home
-  - instances
   - contracts
+  - contract_payments
+  - contract_receipts
   - accounts
   - contacts
+  - contract_types
   - tasks
   - events
-admin_menus:
-  - _id: contracts
-    name: 合同
-    permission_sets:
-      - admin
-    expanded: false
-  - _id: contract_types
-    name: 合同分类
-    permission_sets:
-      - admin
-    object_name: contract_types
-    parent: contracts

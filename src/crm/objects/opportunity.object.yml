@@ -26,7 +26,6 @@ fields:
   due_date:
     label: 结束日期
     type: date
-    required: true
   stage:
     label: 阶段
     type: select
@@ -82,20 +81,6 @@ fields:
       - label: 网站
         value: Website
     filterable: true
-  budget_confirmed:
-    label: 预算已批准
-    type: boolean
-  discovery_completed:
-    label: 需求分析已完成
-    type: boolean
-  ROI_analysis_completed:
-    label: 投资回报分析已完成
-    type: boolean
-  description:
-    label: 描述
-    type: textarea
-    is_wide: true
-    rows: 4
   loss_reason:
     type: select
     label: 失败原因
@@ -112,6 +97,11 @@ fields:
         value: Price
       - label: 其他
         value: Other
+  description:
+    label: 备注
+    type: textarea
+    is_wide: true
+    rows: 4
 list_views:
   all:
     label: 全部业务机会

@@ -32,7 +32,7 @@ fields:
   othercompany:
     type: lookup
     relatedList: true
-    label: 签约对象
+    label: 业务伙伴
     searchable: true
     reference_to: accounts
     required: true
@@ -56,20 +56,9 @@ fields:
         value: 付款合同
       - label: 收款合同
         value: 收款合同
-      - label: 收付款合同
-        value: 收付款合同
-      - label: 无金额合同
-        value: 无金额合同
     allowedValues:
       - 付款合同
       - 收款合同
-      - 收付款合同
-      - 无金额合同
-  applicant:
-    label: 经办人
-    type: lookup
-    searchable: true
-    reference_to: users
   owner:
     label: 执行人
     sortable: true
@@ -87,11 +76,6 @@ fields:
     sortable: true
     type: lookup
     reference_to: users
-  contract_object:
-    label: 合同标的
-    type: textarea
-    group: 合同主要内容
-    is_wide: true
   subject:
     type: textarea
     label: 合同主要内容
@@ -104,47 +88,6 @@ fields:
     scale: 2
     required: true
     sortable: true
-  amount_type:
-    type: select
-    label: 金额类型
-    group: 合同主要内容
-    defaultValue: 固定
-    options:
-      - label: 固定
-        value: 固定
-      - label: 浮动
-        value: 浮动
-      - label: 无金额
-        value: 无金额
-    allowedValues:
-      - 固定
-      - 浮动
-      - 无金额
-  amount_description:
-    label: 金额说明
-    type: textarea
-    group: 合同主要内容
-    is_wide: true
-  receive_payment_type:
-    type: select
-    label: 收/付款方式
-    group: 合同主要内容
-    defaultValue: 一次性
-    options:
-      - label: 一次性
-        value: 一次性
-      - label: 分期
-        value: 分期
-      - label: 无金额
-        value: 无金额
-    allowedValues:
-      - 一次性
-      - 分期
-      - 无金额
-  deadline:
-    type: text
-    group: 合同主要内容
-    label: 合同期限
   signed_date:
     label: 签订日期
     group: 合同主要内容
@@ -167,6 +110,7 @@ fields:
     label: 备注
     group: 合同主要内容
     type: textarea
+    is_wide: true
   contract_state:
     type: select
     label: 合同状态
@@ -215,20 +159,6 @@ fields:
     scale: 2
     sortable: true
     defaultValue: 0
-  receipted_amount:
-    label: 已收票总金额
-    type: number
-    group: 合同收付款信息
-    scale: 2
-    sortable: true
-    defaultValue: 0
-  unclaimed_votes_amount:
-    label: 未收票总金额
-    type: number
-    group: 合同收付款信息
-    scale: 2
-    sortable: true
-    defaultValue: 0
   received_amount:
     label: 已收款总金额
     group: 合同收付款信息
@@ -238,20 +168,6 @@ fields:
     defaultValue: 0
   unreceived_amount:
     label: 未收款总金额
-    group: 合同收付款信息
-    type: number
-    scale: 2
-    sortable: true
-    defaultValue: 0
-  for_invoicing_amount:
-    label: 开票总金额
-    group: 合同收付款信息
-    type: number
-    scale: 2
-    sortable: true
-    defaultValue: 0
-  unfor_invoicing_amount:
-    label: 未开票总金额
     group: 合同收付款信息
     type: number
     scale: 2
@@ -437,12 +353,19 @@ list_views:
 
 permission_set:
   user:
-    allowCreate: false
-    allowDelete: false
+    allowCreate: true
+    allowDelete: true
     allowEdit: true
     allowRead: true
     modifyAllRecords: false
-    viewAllRecords: false
+    viewAllRecords: false 
+  contract_manager:
+    allowCreate: true
+    allowEdit: true
+    allowDelete: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true
   admin:
     allowCreate: true
     allowDelete: true

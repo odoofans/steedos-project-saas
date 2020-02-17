@@ -1,5 +1,5 @@
 name: contract_receipts
-label: 收款计划
+label: 收款
 icon: orders
 enable_follow: true
 fields:
@@ -72,7 +72,14 @@ permission_set:
     allowEdit: true
     allowRead: true
     modifyAllRecords: false
-    viewAllRecords: false
+    viewAllRecords: false 
+  contract_manager:
+    allowCreate: true
+    allowEdit: true
+    allowDelete: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true
   admin:
     allowCreate: true
     allowDelete: true

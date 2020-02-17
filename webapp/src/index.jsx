@@ -8,7 +8,7 @@ let config = {
         "position": "RIGHT",
         "type": "apps",
         "mobile": true,
-        "ignoreApps": ["contracts"]
+        "ignoreApps": ["oa"]
     },
     "workflow": {
         "label": "待审核文件",

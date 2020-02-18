@@ -154,6 +154,7 @@ fields:
     group: 合同收付款信息
     scale: 2
     sortable: true
+    readonly: true
     defaultValue: 0
   unpaid_amount:
     label: 未支付付款总金额
@@ -161,6 +162,7 @@ fields:
     type: number
     scale: 2
     sortable: true
+    readonly: true
     defaultValue: 0
   received_amount:
     label: 已收款总金额
@@ -168,6 +170,7 @@ fields:
     type: number
     scale: 2
     sortable: true
+    readonly: true
     defaultValue: 0
   unreceived_amount:
     label: 未收款总金额
@@ -175,6 +178,7 @@ fields:
     type: number
     scale: 2
     sortable: true
+    readonly: true
     defaultValue: 0
 list_views:
   all:

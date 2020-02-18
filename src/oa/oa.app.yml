@@ -8,5 +8,6 @@ objects:
   - contracts_home
   - instances
   - cms_posts
+  - space_users
   - tasks
   - events

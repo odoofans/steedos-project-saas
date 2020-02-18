@@ -24,7 +24,7 @@ fields:
     filterable: true
     required: true
   due_date:
-    label: 结束日期
+    label: 计划关闭日期
     type: date
   stage:
     label: 阶段

@@ -7,6 +7,6 @@ sort: 100
 objects: 
   - contracts_home
   - instances
-  - cms
+  - cms_posts
   - tasks
   - events

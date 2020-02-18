@@ -3,10 +3,7 @@ datasources:
     connection:
       url: ${MONGO_URL}
     objectFiles:
-      - "./src/base/**"
-      - "./src/contracts/**"
-      - "./src/crm/**"
-      - "./src/oa/**"
+      - "./src/**"
     appFiles:
       - "./src/**"
 public:

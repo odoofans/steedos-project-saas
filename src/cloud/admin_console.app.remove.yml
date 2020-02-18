@@ -1,9 +1,0 @@
-_id: admin_console
-name: 系统控制台
-description: ''
-icon_slds: opportunity
-is_creator: true
-objects:
-  - spaces
-  - users
-  - sessions

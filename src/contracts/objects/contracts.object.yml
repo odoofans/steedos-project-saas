@@ -16,10 +16,13 @@ fields:
     searchable: true
     index: true
   "no":
-    type: text
+    type: autonumber
+    formula: "{0}"
     label: 合同编号
     sortable: true
     filterable: true
+    omit: true
+    readonly: true
   company_id:
     label: 我方单位
     required: false

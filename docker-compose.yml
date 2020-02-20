@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+
+  steedos:
+    build: .
+    #restart: unless-stopped
+    ports:
+      - "5040:5040"
+    volumes:
+      - /srv/workflow/cfs:/storage
+      - /srv/git/steedos-project-saas/src:/app/src
+      - /srv/git/steedos-project-saas/steedos-config.yml:/app/steedos-config.yml
+      - /srv/git/steedos-project-saas/.env.local:/app/.env.local
+

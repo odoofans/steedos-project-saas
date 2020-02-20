@@ -134,7 +134,7 @@ const Home = () => (
 class ContractsAppPlugin {
     initialize(registry, store) {
         registry.registerObjectHomeComponent(
-            'contracts_home',
+            'oa_home',
             Home
         );
     }

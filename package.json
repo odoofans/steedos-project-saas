@@ -6,6 +6,8 @@
     "scripts": {
         "debug": "nodemon server.js",
         "start": "node server.js",
+        "build": "yarn buildClient",
+        "buildClient": "cd webapp && yarn && yarn build && cd ..",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",

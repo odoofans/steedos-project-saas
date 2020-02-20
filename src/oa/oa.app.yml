@@ -5,7 +5,7 @@ icon_slds: approval
 is_creator: true
 sort: 100
 objects: 
-  - contracts_home
+  - oa_home
   - instances
   - cms_posts
   - space_users

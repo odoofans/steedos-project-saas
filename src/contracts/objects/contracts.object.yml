@@ -62,6 +62,8 @@ fields:
     allowedValues:
       - 付款合同
       - 收款合同
+    required: true
+    defaultValue: 收款合同
   owner:
     label: 执行人
     sortable: true
@@ -82,42 +84,35 @@ fields:
   subject:
     type: textarea
     label: 合同主要内容
-    group: 合同主要内容
     is_wide: true
   amount:
     label: 合同金额
     type: number
-    group: 合同主要内容
     scale: 2
     required: true
     sortable: true
   signed_date:
     label: 签订日期
-    group: 合同主要内容
     type: date
     sortable: true
     filterable: true
   start_date:
     label: 开始日期
-    group: 合同主要内容
     type: date
     sortable: true
     filterable: true
   end_date:
     label: 结束日期
-    group: 合同主要内容
     type: date
     sortable: true
     filterable: true
   remark:
     label: 备注
-    group: 合同主要内容
     type: textarea
     is_wide: true
   contract_state:
     type: select
     label: 合同状态
-    group: 合同主要内容
     searchable: true
     options:
       - label: 审批中
@@ -139,7 +134,6 @@ fields:
   contract_fulfillment_state:
     type: select
     label: 合同履行状态
-    group: 合同主要内容
     searchable: true
     options:
       - label: 履行中
@@ -151,14 +145,12 @@ fields:
   paid_amount:
     label: 已支付总金额
     type: number
-    group: 合同收付款信息
     scale: 2
     sortable: true
     readonly: true
     defaultValue: 0
   unpaid_amount:
     label: 未支付付款总金额
-    group: 合同收付款信息
     type: number
     scale: 2
     sortable: true
@@ -166,7 +158,6 @@ fields:
     defaultValue: 0
   received_amount:
     label: 已收款总金额
-    group: 合同收付款信息
     type: number
     scale: 2
     sortable: true
@@ -174,7 +165,6 @@ fields:
     defaultValue: 0
   unreceived_amount:
     label: 未收款总金额
-    group: 合同收付款信息
     type: number
     scale: 2
     sortable: true

@@ -20,7 +20,7 @@ module.exports = {
   },
 
   afterInsert: async function () {
-    await receiptManager.caculateReceiptAmount(this.id);
+    await contractManager.caculateAmount(this.doc.contract);
   },
 
   afterUpdate: async function () {

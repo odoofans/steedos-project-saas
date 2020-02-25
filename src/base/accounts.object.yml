@@ -152,12 +152,6 @@ fields:
     omit: false
     hidden: false
     required: true
-  owner:
-    label: 责任人
-    readonly: true
-    type: lookup
-    reference_to: users
-    hidden: false
   invoice_address:
     label: 开票地址
     group: 开票信息
@@ -180,14 +174,28 @@ fields:
     name: invoice_combinenum
 list_views:
   all:
-    label: 所有单位
+    label: 所有伙伴
     columns:
       - name
       - type
       - rating
-      - phone
       - address
-      - registered_capital
+      - owner
+    filter_scope: space
+  allCustomers:
+    label: 所有顾客
+    filters: !<tag:yaml.org,2002:js/function> |-
+      function () {
+          return [
+            ["type","=","Customer"]
+          ];
+      }
+    columns:
+      - name
+      - type
+      - rating
+      - address
+      - owner
     filter_scope: space
   recent:
     label: 最近查看
@@ -195,19 +203,17 @@ list_views:
       - name
       - type
       - rating
-      - phone
       - address
-      - registered_capital
+      - owner
     filter_scope: space
   mine:
-    label: 我的单位
+    label: 我的伙伴
     columns:
       - name
       - type
       - rating
-      - phone
       - address
-      - registered_capital
+      - owner
     filter_scope: mine
 permission_set:
   user:

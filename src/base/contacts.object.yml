@@ -64,6 +64,7 @@ list_views:
       - email
       - mobile
       - phone
+      - owner
   recent:
     label: 最近查看
     columns:
@@ -72,6 +73,7 @@ list_views:
       - email
       - mobile
       - phone
+      - owner
   mine:
     label: 我的联系人
     columns:
@@ -80,6 +82,7 @@ list_views:
       - email
       - mobile
       - phone
+      - owner
     filter_scope: mine
 permission_set:
   user:

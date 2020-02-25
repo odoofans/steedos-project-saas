@@ -11,3 +11,10 @@ objects:
   - space_users
   - tasks
   - events
+mobile_objects:
+  - oa_home
+  - instances
+  - cms_posts
+  - space_users
+  - tasks
+  - events

@@ -73,6 +73,11 @@ let config = {
         "showAllLink": true,
         "illustration": {
             "messageBody": "您最近7天没有待办任务"
+        },
+        rowIcon: {
+            category: "standard",
+            name: "task",
+            size: "small"
         }
     },
     "calendar": {
@@ -120,6 +125,11 @@ let config = {
         showAllLink: true,
         illustration:{
             messageBody: "您今天没有日程"
+        },
+        rowIcon: {
+            category: "standard",
+            name: "task",
+            size: "small"
         }
     }
 };

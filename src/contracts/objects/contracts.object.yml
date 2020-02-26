@@ -41,7 +41,6 @@ fields:
     required: true
   contract_type:
     type: lookup
-    relatedList: true
     label: 分类
     reference_to: contract_types
     required: true

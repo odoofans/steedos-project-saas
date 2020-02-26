@@ -59,30 +59,48 @@ list_views:
   all:
     label: 所有联系人
     columns:
-      - name
-      - account
-      - email
-      - mobile
-      - phone
-      - owner
+      - field: name
+        width: 100
+      - field: account
+        width: 300
+      - field: email
+        width: 200
+      - field: mobile
+        width: 150
+      - field: phone
+        width: 150
+      - field: owner
+        width: 120
   recent:
     label: 最近查看
     columns:
-      - name
-      - account
-      - email
-      - mobile
-      - phone
-      - owner
+      - field: name
+        width: 100
+      - field: account
+        width: 300
+      - field: email
+        width: 200
+      - field: mobile
+        width: 150
+      - field: phone
+        width: 150
+      - field: owner
+        width: 120
   mine:
     label: 我的联系人
     columns:
-      - name
-      - account
-      - email
-      - mobile
-      - phone
-      - owner
+      - field: name
+        width: 100
+      - field: account
+        width: 300
+      - field: email
+        width: 200
+      - field: mobile
+        width: 150
+      - field: phone
+        width: 150
+      - field: owner
+        width: 120
     filter_scope: mine
 permission_set:
   user:

@@ -175,39 +175,60 @@ list_views:
   all:
     label: 所有潜在客户
     columns:
-      - status
-      - level
-      - name
-      - company
-      - title
-      - phone
-      - mobile
-      - email
-      - owner
+      - field: status
+        width: 60
+      - field: name
+        width: 120
+      - field: company
+        width: 200
+      - field: title
+        width: 150
+      - field: phone
+        width: 150
+      - field: mobile
+        width: 150
+      - field: email
+        width: 200
+      - field: owner
+        width: 120
   recent:
     label: 最近查看的潜在客户
     columns:
-      - status
-      - level
-      - name
-      - company
-      - title
-      - phone
-      - mobile
-      - email
-      - owner
+      - field: status
+        width: 60
+      - field: name
+        width: 120
+      - field: company
+        width: 200
+      - field: title
+        width: 150
+      - field: phone
+        width: 150
+      - field: mobile
+        width: 150
+      - field: email
+        width: 200
+      - field: owner
+        width: 120
   mine:
     label: 我的潜在客户
     columns:
-      - status
-      - level
-      - name
-      - company
-      - title
-      - phone
-      - mobile
-      - email
-      - owner
+      - field: status
+        width: 60
+      - field: name
+        width: 120
+      - field: company
+        width: 200
+      - field: title
+        width: 150
+      - field: phone
+        width: 150
+      - field: mobile
+        width: 150
+      - field: email
+        width: 200
+      - field: owner
+        width: 120
     filter_scope: mine
 permission_set:
   user:

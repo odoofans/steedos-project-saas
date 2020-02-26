@@ -176,11 +176,17 @@ list_views:
   all:
     label: 所有伙伴
     columns:
-      - name
-      - type
-      - rating
-      - address
-      - owner
+      - field: name
+        width: 400
+        wrap: true
+      - field: type
+        width: 120
+      - field: rating
+        width: 50
+      - field: address
+        width: 400
+      - field: owner
+        width: 120
     filter_scope: space
   allCustomers:
     label: 所有顾客
@@ -191,29 +197,47 @@ list_views:
           ];
       }
     columns:
-      - name
-      - type
-      - rating
-      - address
-      - owner
+      - field: name
+        width: 400
+        wrap: true
+      - field: type
+        width: 120
+      - field: rating
+        width: 50
+      - field: address
+        width: 400
+      - field: owner
+        width: 120
     filter_scope: space
   recent:
     label: 最近查看
     columns:
-      - name
-      - type
-      - rating
-      - address
-      - owner
+      - field: name
+        width: 400
+        wrap: true
+      - field: type
+        width: 120
+      - field: rating
+        width: 50
+      - field: address
+        width: 400
+      - field: owner
+        width: 120
     filter_scope: space
   mine:
     label: 我的伙伴
     columns:
-      - name
-      - type
-      - rating
-      - address
-      - owner
+      - field: name
+        width: 400
+        wrap: true
+      - field: type
+        width: 120
+      - field: rating
+        width: 50
+      - field: address
+        width: 400
+      - field: owner
+        width: 120
     filter_scope: mine
 permission_set:
   user:

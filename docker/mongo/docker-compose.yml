@@ -1,0 +1,15 @@
+mongo:
+  image: mongo:3.4.1
+  ports:
+    - "27017:27017"
+  command: mongod --profile=1 --slowms=500 --replSet rs0
+  volumes:
+    - /srv/mongodb/db:/data/db
+    - /srv/mongodb/backup:/data/backup
+  restart: always
+
+mongo-init-replica:
+  image: mongo:3.4.1
+  command: 'mongo mongo/steedos --eval "rs.initiate({ _id: ''rs0'', members: [ { _id: 0, host: ''127.0.0.1:27017'' } ]})"'
+  links:
+    - mongo:mongo

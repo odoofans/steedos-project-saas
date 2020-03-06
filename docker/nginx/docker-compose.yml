@@ -1,0 +1,11 @@
+nginx:
+  image: steedos/nginx-logrotate:1.16.1
+  ports:
+    - "80:80"
+    - "443:443"
+  volumes:
+    - ./docker.conf:/etc/nginx/conf.d/docker.conf
+    - ./nginx.conf:/etc/nginx/nginx.conf
+    - /srv/saas/log/nginx:/var/log/nginx
+    - ./logrotate/nginx:/etc/logrotate.d/nginx
+  restart: always

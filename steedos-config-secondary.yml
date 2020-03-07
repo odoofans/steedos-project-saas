@@ -17,6 +17,8 @@ public:
     workflow:
       status: active
       url: ${ENV_WORKFLOW_URL}
+    steedos:
+      url: ${ENV_CREATOR_URL}
   cfs:
     store: ${ENV_CFS_STORE}
     local:

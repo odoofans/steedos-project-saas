@@ -1,4 +1,4 @@
-FROM steedos/jsreport-2.5.0-full:oracle-instantclient
+FROM node:10.16.0
 
 ADD . /app
 

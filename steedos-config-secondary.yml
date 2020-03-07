@@ -43,6 +43,7 @@ cron:
   instancerecordqueue_interval: 10000
 email:
   from: Steedos <noreply@steedos.com>
+  url: xxx
 logger:
   enabled: true
   showPackage: true

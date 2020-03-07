@@ -7,29 +7,55 @@ datasources:
     appFiles:
       - "./src/**"
 public:
+  webservices:
+    www:
+      status: active
+      url: 'https://www.steedos.com:443'
+    creator:
+      status: active
+      url: ${ENV_CREATOR_URL}
+    workflow:
+      status: active
+      url: ${ENV_WORKFLOW_URL}
   cfs:
     store: ${ENV_CFS_STORE}
     local:
       folder: ${ENV_STORAGE_DIR}
-  webservices:
-    workflow:
-      url: ${ENV_WORKFLOW_URL}
-    creator:
-      url: ${ENV_CREATOR_URL}
-  is_group_company: true
+  admin:
+    disableAddSpace: false
   accounts:
+    disableAccountRegistration: false
+    UTF8_Names_Validation: '[A-Za-z0-9-_.\u00C0-\u017F\u4e00-\u9fa5]+'
     loginExpirationInDays: 1825
-plugins:
-  - "@steedos/accounts"
+  phone:
+    forceAccountBindPhone: false
+  cloudAdminSpaceId: cloud_admin
+  templateSpaceId: 5e38d51b41386900110ff5c5
 cfs:
   aliyun:
     region: ${ENV_CFS_ALIYUN_REGION}
     bucket: ${ENV_CFS_ALIYUN_BUCKET}
     accessKeyId: ${ENV_CFS_ALIYUN_ACCESSKEYID}
     secretAccessKey: ${ENV_CFS_ALIYUN_SECRETACCESSKEY}
+  worker:
+    enabled: true
 cron:
   instancerecordqueue_interval: 10000
+email:
+  from: Steedos <noreply@steedos.com>
+  url: xxx
+logger:
+  enabled: true
+  showPackage: true
+  showFileAndLine: true
+  logLevel: 0
+  viewLimit: 1000
 billing:
   appid: ${ENV_BILLING_APPID}
   mch_id: ${ENV_BILLING_MCH_ID}
   partner_key: ${ENV_BILLING_PARTNER_KEY}
+plugins:
+  - "@steedos/accounts"
+tenant:
+  saas: true
+  enable_password_login: false

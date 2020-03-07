@@ -1,0 +1,94 @@
+datasources:
+  default:
+    auto_migrate: false
+    connection:
+      url: ${MONGO_URL}
+    objectFiles:
+      - "./src/**"
+    appFiles:
+      - "./src/**"
+public:
+  webservices:
+    www:
+      status: active
+      url: "https://www.steedos.com:443"
+    creator:
+      status: active
+      url: ${ENV_CREATOR_URL}
+  cfs:
+    store: ${ENV_CFS_STORE}
+    local:
+      folder: ${ENV_STORAGE_DIR}
+  admin:
+    disableAddSpace: false
+  accounts:
+    disableAccountRegistration: false
+    UTF8_Names_Validation: '[A-Za-z0-9-_.\u00C0-\u017F\u4e00-\u9fa5]+'
+    loginExpirationInDays: 1825
+  phone:
+    forceAccountBindPhone: false
+push:
+  apn:
+    keyData: ${ENV_PUSH_APN_DATA}
+    certData: ${ENV_PUSH_APN_DATA}
+  gcm:
+    apiKey: xxx
+  xinge:
+    accessId: ${ENV_PUSH_XINGE_ACCESSID}
+    secretKey: ${ENV_PUSH_XINGE_SECRETKEY}
+  huawei:
+    appId: ${ENV_PUSH_HUAWEI_APPID}
+    appSecret: ${ENV_PUSH_HUAWEI_APPSECRET}
+    appPkgName: ${ENV_PUSH_HUAWEI_APPPKGNAME}
+  mi:
+    appSecret: ${ENV_PUSH_MI_APPSECRET}
+    production: ${ENV_PUSH_MI_PRODUCTION}
+cfs:
+  aliyun:
+    region: ${ENV_CFS_ALIYUN_REGION}
+    bucket: ${ENV_CFS_ALIYUN_BUCKET}
+    accessKeyId: ${ENV_CFS_ALIYUN_ACCESSKEYID}
+    secretAccessKey: ${ENV_CFS_ALIYUN_SECRETACCESSKEY}
+  worker:
+    enabled: true
+cron:
+  statistics: 0 0 0 * * *
+  mailqueue_interval: 1000
+  push_interval: 1000
+  calendar_dav_interval: 30000
+  calendar_remind: 60000
+  webhookqueue_interval: 1000
+  instancerecordqueue_interval: 10000
+email:
+  from: Steedos <noreply@steedos.com>
+sms:
+  qcloud:
+    smsqueue_interval: 1000
+    sdkappid: ${ENV_SMS_QCLOUD_SDKAPPID}
+    appkey: ${ENV_SMS_QCLOUD_APPKEY}
+    signname: ${ENV_SMS_QCLOUD_SIGNNAME}
+logger:
+  enabled: true
+  showPackage: true
+  showFileAndLine: true
+  logLevel: 0
+  viewLimit: 1000
+billing:
+  appid: ${ENV_BILLING_APPID}
+  mch_id: ${ENV_BILLING_MCH_ID}
+  partner_key: ${ENV_BILLING_PARTNER_KEY}
+qiyeweixin:
+  sync_interval: 600000
+  authorize_uri: "https://open.weixin.qq.com/connect/oauth2/authorize"
+  api:
+    getLoginInfo: "https://qyapi.weixin.qq.com/cgi-bin/service/get_login_info"
+    getProviderToken: "https://qyapi.weixin.qq.com/cgi-bin/service/get_provider_token"
+    getSuiteAccessToken: "https://qyapi.weixin.qq.com/cgi-bin/service/get_suite_token"
+    getPreAuthCode: "https://qyapi.weixin.qq.com/cgi-bin/service/get_pre_auth_code"
+    getPermanentCode: "https://qyapi.weixin.qq.com/cgi-bin/service/get_permanent_code"
+    getCorpToken: "https://qyapi.weixin.qq.com/cgi-bin/service/get_corp_token"
+    getDepartmentList: "https://qyapi.weixin.qq.com/cgi-bin/department/list"
+    getUserList: "https://qyapi.weixin.qq.com/cgi-bin/user/list"
+    getAllUserList: "https://qyapi.weixin.qq.com/cgi-bin/user/list"
+    getAdminList: "https://qyapi.weixin.qq.com/cgi-bin/service/get_admin_list"
+    getUserInfo3rd: "https://qyapi.weixin.qq.com/cgi-bin/service/getuserinfo3rd"

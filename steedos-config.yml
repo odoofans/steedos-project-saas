@@ -9,6 +9,8 @@ datasources:
 public:
   cfs:
     store: ${ENV_CFS_STORE}
+    local:
+      folder: ${ENV_STORAGE_DIR}
   webservices:
     workflow:
       url: ${ENV_WORKFLOW_URL}

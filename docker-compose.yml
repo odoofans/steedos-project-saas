@@ -10,6 +10,15 @@ services:
     volumes:
       - /srv/workflow/cfs:/storage
       - ./src:/app/src
-      - ./steedos-config.yml:/app/steedos-config.yml
+      - ./steedos-config-secondary.yml:/app/steedos-config.yml
+      - ./.env.local:/app/.env.local
+  
+  primary:
+    image: steedos-project-saas_steedos:latest
+    restart: unless-stopped
+    volumes:
+      - /srv/workflow/cfs:/storage
+      - ./src:/app/src
+      - ./steedos-config-primary.yml:/app/steedos-config.yml
       - ./.env.local:/app/.env.local
 

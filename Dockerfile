@@ -12,8 +12,6 @@ RUN npm install -g typescript
 
 RUN yarn config set registry http://registry.npm.taobao.org/
 
-RUN yarn --force
-
-RUN yarn buildClient
+RUN yarn install --production
 
 CMD ["yarn", "start"]

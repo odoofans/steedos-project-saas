@@ -92,3 +92,5 @@ qiyeweixin:
     getAllUserList: "https://qyapi.weixin.qq.com/cgi-bin/user/list"
     getAdminList: "https://qyapi.weixin.qq.com/cgi-bin/service/get_admin_list"
     getUserInfo3rd: "https://qyapi.weixin.qq.com/cgi-bin/service/getuserinfo3rd"
+tenant:
+  saas: true

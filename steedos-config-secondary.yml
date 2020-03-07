@@ -68,3 +68,6 @@ qiyeweixin:
     getUserInfo3rd: 'https://qyapi.weixin.qq.com/cgi-bin/service/getuserinfo3rd'
 plugins:
   - "@steedos/accounts"
+tenant:
+  saas: true
+  enable_password_login: false

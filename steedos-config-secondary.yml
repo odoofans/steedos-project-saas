@@ -17,8 +17,6 @@ public:
     workflow:
       status: active
       url: ${ENV_WORKFLOW_URL}
-    steedos:
-      url: ${ENV_CREATOR_URL}
   cfs:
     store: ${ENV_CFS_STORE}
     local:
@@ -77,3 +75,5 @@ tenant:
   saas: true
   enable_password_login: false
   name: 华炎云
+webservices:
+  steedos: ${ENV_CREATOR_URL}

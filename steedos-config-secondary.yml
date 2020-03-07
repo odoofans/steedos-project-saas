@@ -44,7 +44,7 @@ cfs:
 cron:
   instancerecordqueue_interval: 10000
 email:
-  from: Steedos <noreply@steedos.com>
+  from: 华炎云 <noreply@steedos.com>
   url: xxx
 logger:
   enabled: true
@@ -76,3 +76,4 @@ plugins:
 tenant:
   saas: true
   enable_password_login: false
+  name: 华炎云

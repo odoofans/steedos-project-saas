@@ -21,4 +21,5 @@ services:
       - ./src:/app/src
       - ./steedos-config-primary.yml:/app/steedos-config.yml
       - ./.env.local:/app/.env.local
+      - ./.migrate:/app/.migrate
 

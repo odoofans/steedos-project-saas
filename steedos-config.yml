@@ -58,5 +58,5 @@ plugins:
   - "@steedos/accounts"
 tenant:
   saas: true
-  enable_password_login: false
+  enable_password_login: true
   name: 华炎云

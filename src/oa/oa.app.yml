@@ -8,6 +8,7 @@ objects:
   - oa_home
   - instances
   - cms_posts
+  - announcements
   - space_users
   - tasks
   - events
@@ -15,6 +16,7 @@ mobile_objects:
   - oa_home
   - instances
   - cms_posts
+  - announcements
   - space_users
   - tasks
   - events

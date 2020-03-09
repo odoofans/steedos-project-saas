@@ -97,5 +97,5 @@ qiyeweixin:
     getUserInfo3rd: "https://qyapi.weixin.qq.com/cgi-bin/service/getuserinfo3rd"
 tenant:
   saas: true
-  enable_password_login: false
+  enable_password_login: true
   name: 华炎云

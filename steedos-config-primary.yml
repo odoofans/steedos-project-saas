@@ -1,6 +1,5 @@
 datasources:
   default:
-    auto_migrate: false
     connection:
       url: ${MONGO_URL}
     objectFiles:

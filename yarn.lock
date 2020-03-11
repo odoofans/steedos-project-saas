@@ -702,33 +702,6 @@
   dependencies:
     tslib "^1.10.0"
 
-"@steedos/accounts@^1.11.0":
-  version "1.11.0"
-  resolved "https://registry.npm.taobao.org/@steedos/accounts/download/@steedos/accounts-1.11.0.tgz#d54de7769c9715efb7136b85ef79a2433c7c7679"
-  integrity sha1-1U3ndpyXFe+3E2uF73miQzx8dnk=
-  dependencies:
-    "@accounts/mongo" "^0.19.0"
-    "@accounts/rest-express" "^0.19.0"
-    "@accounts/server" "^0.19.0"
-    "@accounts/two-factor" "^0.20.1"
-    "@babel/runtime" "^7.6.0"
-    "@types/cors" "^2.8.6"
-    app-root-path "^2.2.1"
-    bcryptjs "^2.4.3"
-    body-parser "1.19.0"
-    cookies "^0.7.3"
-    cors "2.8.5"
-    crypto "^1.0.1"
-    express "4.17.1"
-    js-yaml "^3.13.1"
-    mem "^5.1.1"
-    mongoose "5.6.6"
-    nodemailer "^6.3.0"
-    oauth2-server "^2.4.1"
-    redux-thunk "^2.3.0"
-    saml-idp "^1.1.0"
-    tslib "1.10.0"
-
 "@steedos/accounts@^1.11.2":
   version "1.11.2"
   resolved "https://registry.npm.taobao.org/@steedos/accounts/download/@steedos/accounts-1.11.2.tgz#616b17f61f03f620440b9e7d55c7552e69e0b971"

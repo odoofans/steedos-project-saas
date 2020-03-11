@@ -15,7 +15,3 @@ objects:
 mobile_objects:
   - leads
   - opportunity
-  - accounts
-  - contacts
-  - tasks
-  - events  

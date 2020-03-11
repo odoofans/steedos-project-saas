@@ -20,6 +20,3 @@ mobile_objects:
   - contract_receipts
   - accounts
   - contacts
-  - contract_types
-  - tasks
-  - events

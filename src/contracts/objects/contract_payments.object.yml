@@ -1,6 +1,6 @@
 name: contract_payments
 label: 付款
-icon: orders
+icon: logging
 enable_follow: true
 fields:
   name:

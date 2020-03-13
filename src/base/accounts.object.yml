@@ -147,11 +147,6 @@ fields:
     type: textarea
     is_wide: true
     name: description
-  company_ids:
-    label: 所属单位
-    omit: false
-    hidden: false
-    required: true
   invoice_address:
     label: 开票地址
     group: 开票信息

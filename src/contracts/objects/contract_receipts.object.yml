@@ -49,11 +49,6 @@ fields:
     relatedList: true
     searchable: true
     omit: true
-  company_id:
-    required: true
-    omit: false
-    hidden: false
-    type: lookup
 list_views:
   all:
     label: 所有

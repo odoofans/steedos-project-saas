@@ -50,11 +50,6 @@ fields:
     reference_to: accounts 
     relatedList: true
     searchable: true
-  company_id:
-    required: true
-    omit: false
-    hidden: false
-    type: lookup
 list_views:
   all:
     label: 所有

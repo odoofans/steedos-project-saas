@@ -23,15 +23,6 @@ fields:
     filterable: true
     omit: true
     readonly: true
-  company_id:
-    label: 我方单位
-    required: false
-    omit: false
-    hidden: false
-    sortable: true
-    type: lookup
-    relatedList: true
-    reference_to: company
   othercompany:
     type: lookup
     relatedList: true
@@ -192,8 +183,6 @@ list_views:
       - field: contract_type
         width: 120
       - field: bop
-        width: 120
-      - field: company_id
         width: 120
       - field: owner
         width: 120

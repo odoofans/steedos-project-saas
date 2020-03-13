@@ -1,8 +1,7 @@
 version: "2"
 
 services:
-
-  steedos:
+  steedos1:
     build: .
     restart: unless-stopped
     ports:
@@ -12,7 +11,47 @@ services:
       - ./src:/app/src
       - ./steedos-config-secondary.yml:/app/steedos-config.yml
       - ./.env.local:/app/.env.local
-  
+  steedos2:
+    image: steedos-project-saas_steedos:latest
+    restart: unless-stopped
+    ports:
+      - "5041:5040"
+    volumes:
+      - /srv/workflow/cfs:/storage
+      - ./src:/app/src
+      - ./steedos-config-secondary.yml:/app/steedos-config.yml
+      - ./.env.local:/app/.env.local
+  steedos3:
+    image: steedos-project-saas_steedos:latest
+    restart: unless-stopped
+    ports:
+      - "5042:5040"
+    volumes:
+      - /srv/workflow/cfs:/storage
+      - ./src:/app/src
+      - ./steedos-config-secondary.yml:/app/steedos-config.yml
+      - ./.env.local:/app/.env.local
+  steedos4:
+    image: steedos-project-saas_steedos:latest
+    restart: unless-stopped
+    ports:
+      - "5043:5040"
+    volumes:
+      - /srv/workflow/cfs:/storage
+      - ./src:/app/src
+      - ./steedos-config-secondary.yml:/app/steedos-config.yml
+      - ./.env.local:/app/.env.local
+  steedos5:
+    image: steedos-project-saas_steedos:latest
+    restart: unless-stopped
+    ports:
+      - "5044:5040"
+    volumes:
+      - /srv/workflow/cfs:/storage
+      - ./src:/app/src
+      - ./steedos-config-secondary.yml:/app/steedos-config.yml
+      - ./.env.local:/app/.env.local
+
   primary:
     image: steedos-project-saas_steedos:latest
     restart: unless-stopped
@@ -22,4 +61,3 @@ services:
       - ./steedos-config-primary.yml:/app/steedos-config.yml
       - ./.env.local:/app/.env.local
       - ./.migrate:/app/.migrate
-

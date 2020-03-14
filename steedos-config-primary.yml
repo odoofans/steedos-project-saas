@@ -98,3 +98,4 @@ tenant:
   saas: true
   enable_password_login: true
   name: 华炎云
+  enable_mobile_code_login: true

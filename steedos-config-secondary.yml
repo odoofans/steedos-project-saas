@@ -76,3 +76,5 @@ tenant:
   enable_mobile_code_login: true
 webservices:
   steedos: ${ENV_CREATOR_URL}
+accounts:
+  mobile_phone_locales: ['zh-CN']

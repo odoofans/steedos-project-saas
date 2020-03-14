@@ -3,6 +3,7 @@ version: "2"
 services:
   steedos1:
     build: .
+    image: steedos-project-saas_steedos1:latest
     restart: unless-stopped
     ports:
       - "5040:5040"

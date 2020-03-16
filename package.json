@@ -5,7 +5,7 @@
     "main": "server.js",
     "scripts": {
         "debug": "nodemon server.js",
-        "start": "node --max-old-space-size=4096 server.js",
+        "start": "node --max-old-space-size=2048 server.js",
         "build": "yarn buildClient",
         "buildClient": "cd webapp && yarn && yarn build && cd ..",
         "test": "echo \"Error: no test specified\" && exit 1"

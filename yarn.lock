@@ -702,10 +702,10 @@
   dependencies:
     tslib "^1.10.0"
 
-"@steedos/accounts@^1.11.5":
-  version "1.11.5"
-  resolved "https://registry.npm.taobao.org/@steedos/accounts/download/@steedos/accounts-1.11.5.tgz#f6a1769c628b01146af26b04645150c5256a2117"
-  integrity sha1-9qF2nGKLARRq8msEZFFQxSVqIRc=
+"@steedos/accounts@^1.11.6":
+  version "1.11.6"
+  resolved "https://registry.npm.taobao.org/@steedos/accounts/download/@steedos/accounts-1.11.6.tgz#4ca009fdc02dc337d4646eb813cd4d4f979c7784"
+  integrity sha1-TKAJ/cAtwzfUZG64E81NT5ecd4Q=
   dependencies:
     "@accounts/mongo" "^0.19.0"
     "@accounts/rest-express" "^0.19.0"

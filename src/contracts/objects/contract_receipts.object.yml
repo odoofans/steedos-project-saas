@@ -55,7 +55,7 @@ list_views:
       - field: due_date
         width: 120
       - field: name
-        width: 160
+        width: 220
       - field: contract
         width: 280
       - field: account
@@ -76,7 +76,7 @@ list_views:
       - field: real_date
         width: 120
       - field: name
-        width: 160
+        width: 220
       - field: contract
         width: 280
       - field: account
@@ -99,7 +99,7 @@ list_views:
       - field: real_date
         width: 120
       - field: name
-        width: 160
+        width: 220
       - field: contract
         width: 280
       - field: account
@@ -121,7 +121,7 @@ list_views:
       - field: real_date
         width: 120
       - field: name
-        width: 160
+        width: 220
       - field: contract
         width: 280
       - field: account

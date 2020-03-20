@@ -177,7 +177,7 @@ list_views:
       - field: type
         width: 120
       - field: rating
-        width: 50
+        width: 60
       - field: address
         width: 400
       - field: owner
@@ -204,7 +204,7 @@ list_views:
       - field: type
         width: 120
       - field: rating
-        width: 50
+        width: 60
       - field: address
         width: 400
       - field: owner
@@ -230,7 +230,7 @@ list_views:
       - field: type
         width: 120
       - field: rating
-        width: 50
+        width: 60
       - field: address
         width: 400
       - field: owner
@@ -250,7 +250,7 @@ list_views:
       - field: type
         width: 120
       - field: rating
-        width: 50
+        width: 60
       - field: address
         width: 400
       - field: owner
@@ -271,7 +271,7 @@ list_views:
       - field: type
         width: 120
       - field: rating
-        width: 50
+        width: 60
       - field: address
         width: 400
       - field: owner

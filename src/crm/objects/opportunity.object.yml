@@ -115,6 +115,11 @@ list_views:
       - lead_source
       - owner
     filter_scope: space
+    filter_fields:
+      - stage
+      - lead_source
+      - account
+      - name
   recent:
     label: 最近查看
     columns:
@@ -127,6 +132,11 @@ list_views:
       - lead_source
       - owner
     filter_scope: space
+    filter_fields:
+      - stage
+      - lead_source
+      - account
+      - name
   mine:
     label: 我的客户
     columns:
@@ -139,6 +149,11 @@ list_views:
       - lead_source
       - owner
     filter_scope: mine
+    filter_fields:
+      - stage
+      - lead_source
+      - account
+      - name
 permission_set:
   user:
     allowCreate: false

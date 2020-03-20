@@ -211,8 +211,34 @@ list_views:
         width: 120
     filter_scope: space
     filter_fields:
+      - type
       - industry
-      - rating
+      - name
+      - address
+  hotRating:
+    label: 高分级的伙伴
+    filters: !<tag:yaml.org,2002:js/function> |-
+      function () {
+          return [
+            ["rating","=","hot"]
+          ];
+      }
+    columns:
+      - field: name
+        width: 400
+        wrap: true
+      - field: type
+        width: 120
+      - field: rating
+        width: 50
+      - field: address
+        width: 400
+      - field: owner
+        width: 120
+    filter_scope: space
+    filter_fields:
+      - type
+      - industry
       - name
       - address
   recent:

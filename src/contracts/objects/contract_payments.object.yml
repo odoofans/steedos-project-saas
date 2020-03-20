@@ -50,6 +50,32 @@ fields:
     relatedList: true
     searchable: true
 list_views:
+  unpayed:
+    label: 待付款
+    filter_scope: space
+    filters: !<tag:yaml.org,2002:js/function> |-
+      function () {
+          return [
+            ["finished","=",false]
+          ];
+      }
+    filter_fields:
+      - account
+      - contract
+      - real_date
+  payed:
+    label: 已付款
+    filter_scope: space
+    filters: !<tag:yaml.org,2002:js/function> |-
+      function () {
+          return [
+            ["finished","=",true]
+          ];
+      }
+    filter_fields:
+      - account
+      - contract
+      - due_date
   all:
     label: 所有
     columns:
@@ -64,9 +90,21 @@ list_views:
     sort:
       - - due_date
         - desc
+    filter_fields:
+      - finished
+      - account
+      - contract
+      - due_date
+      - real_date
   recent:
     label: 最近查看
     filter_scope: space
+    filter_fields:
+      - finished
+      - account
+      - contract
+      - due_date
+      - real_date
 permission_set:
   user:
     allowCreate: true

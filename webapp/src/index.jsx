@@ -55,7 +55,7 @@ let config = {
         "filters": [
             ["assignees", "=", "{userId}"],
             ["state", "<>", "complete"],
-            ['created', 'between', 'last_7_days']
+            ['due_date', 'between', 'last_7_days']
         ],
         "sort": "due_date",
         "columns": [{
@@ -75,12 +75,12 @@ let config = {
         },
         rowIcon: {
             category: "standard",
-            name: "task",
+            name: "timesheet_entry",
             size: "small"
         }
     },
     "calendar": {
-        label: "日程",
+        label: "今日日程",
         position: "CENTER_BOTTOM_RIGHT",
         type: "object",
         objectName: "events",
@@ -114,11 +114,6 @@ let config = {
             "label": "开始时间",
             "width": "10rem",
             "type": "datetime"
-        }, {
-            "field": "end",
-            "label": "结束时间",
-            "width": "10rem",
-            "type": "datetime"
         }],
         unborderedRow: true,
         showAllLink: true,
@@ -127,7 +122,40 @@ let config = {
         },
         rowIcon: {
             category: "standard",
-            name: "task",
+            name: "event",
+            size: "small"
+        }
+    },
+    "announcements": {
+        "label": "本周公告",
+        "position": "RIGHT",
+        "type": "object",
+        "objectName": "announcements",
+        "filters": [
+            ["owner", "=", "{userId}"],
+            ["members", "=", "{userId}"],
+            ['created', 'between', 'last_7_days']
+        ],
+        "sort": "created desc",
+        "columns": [{
+            "field": "name",
+            "label": "标题",
+            "href": true
+        },{
+            "field": "created",
+            "label": "发布时间",
+            "width": "10rem",
+            "type": "datetime"
+        }],
+        "noHeader": false,
+        "unborderedRow": true,
+        "showAllLink": true,
+        "illustration": {
+            "messageBody": "本周没有新公告"
+        },
+        rowIcon: {
+            category: "standard",
+            name: "announcement",
             size: "small"
         }
     }

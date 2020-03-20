@@ -172,6 +172,58 @@ fields:
     label: 地址
     type: text
 list_views:
+  new:
+    label: 新的潜在客户
+    filters: !<tag:yaml.org,2002:js/function> |-
+      function () {
+          return [
+            ["status","=","New"]
+          ];
+      }
+    columns:
+      - field: status
+        width: 60
+      - field: name
+        width: 120
+      - field: company
+        width: 200
+      - field: title
+        width: 150
+      - field: phone
+        width: 150
+      - field: mobile
+        width: 150
+      - field: email
+        width: 200
+      - field: owner
+        width: 120
+    filter_fields: ["rating","name", "company"]
+  hot:
+    label: 高分级的潜在客户
+    filters: !<tag:yaml.org,2002:js/function> |-
+      function () {
+          return [
+            ["rating","=","Hot"]
+          ];
+      }
+    columns:
+      - field: status
+        width: 60
+      - field: name
+        width: 120
+      - field: company
+        width: 200
+      - field: title
+        width: 150
+      - field: phone
+        width: 150
+      - field: mobile
+        width: 150
+      - field: email
+        width: 200
+      - field: owner
+        width: 120
+    filter_fields: ["status","name", "company"]
   all:
     label: 所有潜在客户
     columns:
@@ -191,7 +243,7 @@ list_views:
         width: 200
       - field: owner
         width: 120
-    filter_fields: ["name", "company", "status", "rating"]
+    filter_fields: ["status", "rating", "name", "company"]
   recent:
     label: 最近查看的潜在客户
     columns:
@@ -211,7 +263,7 @@ list_views:
         width: 200
       - field: owner
         width: 120
-    filter_fields: ["name", "company", "status", "rating"]
+    filter_fields: ["status", "rating", "name", "company"]
   mine:
     label: 我的潜在客户
     columns:
@@ -231,7 +283,7 @@ list_views:
         width: 200
       - field: owner
         width: 120
-    filter_fields: ["name", "company", "status", "rating"]
+    filter_fields: ["status", "rating", "name", "company"]
     filter_scope: mine
 permission_set:
   user:

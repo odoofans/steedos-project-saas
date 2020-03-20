@@ -191,6 +191,7 @@ list_views:
         width: 200
       - field: owner
         width: 120
+    filter_fields: ["name", "company", "status", "rating"]
   recent:
     label: 最近查看的潜在客户
     columns:
@@ -210,6 +211,7 @@ list_views:
         width: 200
       - field: owner
         width: 120
+    filter_fields: ["name", "company", "status", "rating"]
   mine:
     label: 我的潜在客户
     columns:
@@ -229,6 +231,7 @@ list_views:
         width: 200
       - field: owner
         width: 120
+    filter_fields: ["name", "company", "status", "rating"]
     filter_scope: mine
 permission_set:
   user:

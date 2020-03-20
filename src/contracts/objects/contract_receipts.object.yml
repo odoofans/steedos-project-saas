@@ -52,12 +52,18 @@ list_views:
   pending:
     label: 待收款
     columns:
-      - name
-      - contract
-      - amount
-      - due_date
-      - account
-      - finished
+      - field: due_date
+        width: 120
+      - field: name
+        width: 160
+      - field: contract
+        width: 280
+      - field: account
+        width: 280
+      - field: amount
+        width: 120
+      - field: finished
+        width: 100
     filters: [["finished", "=", false]]
     filter_fields: ["contract", "account", "due_date"]
     filter_scope: space
@@ -67,29 +73,41 @@ list_views:
   receipted:
     label: 已收款
     columns:
-      - name
-      - contract
-      - amount
-      - due_date
-      - account
-      - finished
-      - real_date
+      - field: real_date
+        width: 120
+      - field: name
+        width: 160
+      - field: contract
+        width: 280
+      - field: account
+        width: 280
+      - field: amount
+        width: 120
+      - field: finished
+        width: 100
     filters: [["finished", "=", true]]
     filter_fields: ["contract", "account", "real_date"]
     filter_scope: space
     sort:
-      - - due_date
+      - - real_date
         - desc
   all:
     label: 所有
     columns:
-      - name
-      - contract
-      - amount
-      - due_date
-      - account
-      - finished
-      - real_date
+      - field: due_date
+        width: 120
+      - field: real_date
+        width: 120
+      - field: name
+        width: 160
+      - field: contract
+        width: 280
+      - field: account
+        width: 280
+      - field: amount
+        width: 120
+      - field: finished
+        width: 100
     filter_fields: ["contract", "account", "due_date", "real_date"]
     filter_scope: space
     sort:
@@ -97,7 +115,21 @@ list_views:
         - desc
   recent:
     label: 最近查看
-    filter_fields: ["contract", "account", "due_date", "real_date"]
+    filter_fields:
+      - field: due_date
+        width: 120
+      - field: real_date
+        width: 120
+      - field: name
+        width: 160
+      - field: contract
+        width: 280
+      - field: account
+        width: 280
+      - field: amount
+        width: 120
+      - field: finished
+        width: 100
     filter_scope: space
 permission_set:
   user:

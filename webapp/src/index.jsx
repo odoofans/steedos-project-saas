@@ -4,13 +4,6 @@ import { Bootstrap, Dashboard, entityStateSelector, store } from '@steedos/react
 import { getBetweenTimeBuiltinValueItem } from '@steedos/filters';
 
 let config = {
-    "apps": {
-        "label": "应用程序启动器",
-        "position": "RIGHT",
-        "type": "apps",
-        "mobile": true,
-        "ignoreApps": ["oa"]
-    },
     "workflow": {
         "label": "待审核文件",
         "position": "CENTER_TOP",
@@ -48,82 +41,16 @@ let config = {
             size: "small"
         }
     },
-    "tasks": {
-        "label": "今日任务",
-        "position": "CENTER_BOTTOM_LEFT",
-        "type": "object",
-        "objectName": "tasks",
-        "filters": [
-            ["assignees", "=", "{userId}"],
-            ["state", "<>", "complete"],
-            ['due_date', 'between', 'last_30_days']
-        ],
-        "sort": "due_date",
-        "columns": [{
-            "field": "name",
-            "label": "主题",
-            "href": true
-        }, {
-            "field": "due_date",
-            "label": "到期日期",
-            "width": "10rem",
-            "type": "date"
-        }],
-        "unborderedRow": true,
-        "showAllLink": true,
-        "illustration": {
-            "messageBody": "您今天没有待办任务"
-        },
-        rowIcon: {
-            category: "standard",
-            name: "timesheet_entry",
-            size: "small"
-        }
-    },
-    "calendar": {
-        label: "今日日程",
-        position: "CENTER_BOTTOM_RIGHT",
-        type: "object",
-        objectName: "events",
-        filters: function(){
-            let utcOffset = Creator.USER_CONTEXT.user && Creator.USER_CONTEXT.user.utcOffset;
-            let today = getBetweenTimeBuiltinValueItem("today", utcOffset);
-            let start = today.values[0];
-            let end = today.values[1];
-            return [[
-                ['owner', '=', '{userId}'], 
-                'or', 
-                ['assignees', '=', '{userId}']
-            ], [
-                ['end', '>=', start], 
-                ['start', '<=', end]
-            ]]
-        },
-        sort: "start desc, end",
-        columns: [{
-            field: "name",
-            label: "主题",
-            href: true
-        }, {
-            "field": "start",
-            "label": "开始时间",
-            "width": "10rem",
-            "type": "datetime"
-        }],
-        unborderedRow: true,
-        showAllLink: true,
-        illustration:{
-            messageBody: "您今天没有日程"
-        },
-        rowIcon: {
-            category: "standard",
-            name: "event",
-            size: "small"
-        }
+    "apps": {
+        "label": "应用程序",
+        "position": "CENTER_TOP",
+        "type": "apps",
+        "mobile": false,
+        "ignoreApps": ["oa"]
     },
     "announcements": {
         "label": "本周公告",
-        "position": "RIGHT",
+        "position": "CENTER_TOP",
         "type": "object",
         "objectName": "announcements",
         "filters": [
@@ -151,6 +78,71 @@ let config = {
         rowIcon: {
             category: "standard",
             name: "announcement",
+            size: "small"
+        }
+    },
+    "tasks": {
+        "label": "今日任务",
+        "position": "RIGHT",
+        "type": "object",
+        "objectName": "tasks",
+        "filters": [
+            ["assignees", "=", "{userId}"],
+            ["state", "<>", "complete"],
+            ['due_date', 'between', 'last_30_days']
+        ],
+        "sort": "due_date",
+        "columns": [{
+            "field": "name",
+            "label": "主题",
+            "href": true
+        }],
+        "unborderedRow": true,
+        "showAllLink": true,
+        "illustration": {
+            "messageBody": "您今天没有待办任务"
+        },
+        "noHeader": true,
+        rowIcon: {
+            category: "standard",
+            name: "timesheet_entry",
+            size: "small"
+        }
+    },
+    "calendar": {
+        label: "今日日程",
+        position: "RIGHT",
+        type: "object",
+        objectName: "events",
+        filters: function(){
+            let utcOffset = Creator.USER_CONTEXT.user && Creator.USER_CONTEXT.user.utcOffset;
+            let today = getBetweenTimeBuiltinValueItem("today", utcOffset);
+            let start = today.values[0];
+            let end = today.values[1];
+            return [[
+                ['owner', '=', '{userId}'], 
+                'or', 
+                ['assignees', '=', '{userId}']
+            ], [
+                ['end', '>=', start], 
+                ['start', '<=', end]
+            ]]
+        },
+        sort: "start desc, end",
+        columns: [{
+            field: "name",
+            label: "主题",
+            href: true
+        }],
+        unborderedRow: true,
+        showAllLink: true,
+        illustration:{
+            messageBody: "您今天没有日程"
+        },
+        "noHeader": true,
+        rowIcon: {
+            category: "standard",
+            name: "event",
             size: "small"
         }
     }

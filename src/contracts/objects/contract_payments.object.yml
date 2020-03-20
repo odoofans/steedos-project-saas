@@ -59,10 +59,17 @@ list_views:
             ["finished","=",false]
           ];
       }
+    columns:
+      - name
+      - contract
+      - amount
+      - due_date
+      - account
+      - finished
     filter_fields:
       - account
       - contract
-      - real_date
+      - due_date
   payed:
     label: 已付款
     filter_scope: space
@@ -72,10 +79,18 @@ list_views:
             ["finished","=",true]
           ];
       }
+    columns:
+      - name
+      - contract
+      - amount
+      - due_date
+      - account
+      - finished
+      - real_date
     filter_fields:
       - account
       - contract
-      - due_date
+      - real_date
   all:
     label: 所有
     columns:

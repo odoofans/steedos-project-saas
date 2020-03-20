@@ -10,6 +10,7 @@ objects:
   - contract_receipts
   - accounts
   - contacts
+  - contract_types
   - tasks
   - events
   - reports
@@ -19,13 +20,3 @@ mobile_objects:
   - contract_receipts
   - accounts
   - contacts
-admin_menus:
-  - _id: contracts
-    name: 合同
-    permission_sets:
-      - user
-    expanded: false
-  - _id: contract_types
-    parent: contracts
-    name: 合同分类
-    object_name: contract_types

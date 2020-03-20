@@ -3,7 +3,7 @@ name: 销售
 description: 管理客户、业务机会、潜在客户。
 icon_slds: opportunity
 is_creator: true
-sort: 300
+sort: 1010
 objects:
   - leads
   - opportunity

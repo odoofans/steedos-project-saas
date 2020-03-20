@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Bootstrap, Dashboard, entityStateSelector, store } from '@steedos/react';
+import { getBetweenTimeBuiltinValueItem } from '@steedos/filters';
 
 let config = {
     "apps": {
@@ -48,14 +49,14 @@ let config = {
         }
     },
     "tasks": {
-        "label": "待办任务",
+        "label": "今日任务",
         "position": "CENTER_BOTTOM_LEFT",
         "type": "object",
         "objectName": "tasks",
         "filters": [
             ["assignees", "=", "{userId}"],
             ["state", "<>", "complete"],
-            ['due_date', 'between', 'last_7_days']
+            ['due_date', 'between', 'last_30_days']
         ],
         "sort": "due_date",
         "columns": [{
@@ -64,14 +65,14 @@ let config = {
             "href": true
         }, {
             "field": "due_date",
-            "label": "截止时间",
+            "label": "到期日期",
             "width": "10rem",
-            "type": "datetime"
+            "type": "date"
         }],
         "unborderedRow": true,
         "showAllLink": true,
         "illustration": {
-            "messageBody": "您最近7天没有待办任务"
+            "messageBody": "您今天没有待办任务"
         },
         rowIcon: {
             category: "standard",
@@ -85,16 +86,10 @@ let config = {
         type: "object",
         objectName: "events",
         filters: function(){
-            let start = new Date();
-            start.setHours(0);
-            start.setMinutes(0);
-            start.setSeconds(0);
-            start.setMilliseconds(0);
-            let end = new Date();
-            end.setHours(23);
-            end.setMinutes(59);
-            end.setSeconds(59);
-            end.setMilliseconds(0);
+            let utcOffset = Creator.USER_CONTEXT.user && Creator.USER_CONTEXT.user.utcOffset;
+            let today = getBetweenTimeBuiltinValueItem("today", utcOffset);
+            let start = today.values[0];
+            let end = today.values[1];
             return [[
                 ['owner', '=', '{userId}'], 
                 'or', 

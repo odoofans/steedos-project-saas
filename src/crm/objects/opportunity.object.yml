@@ -103,17 +103,92 @@ fields:
     is_wide: true
     rows: 4
 list_views:
+  operating:
+    label: 进行中的业务机会
+    columns:
+      - field: name
+        width: 220
+      - field: account
+        width: 280
+      - field: amount
+        width: 120
+      - field: due_date
+        width: 120
+      - field: stage
+        width: 160
+      - field: probability
+        width: 120
+      - field: lead_source
+        width: 120
+      - field: owner
+        width: 120
+    filter_scope: space
+    filters: [["stage", "!=", Closed_Won],["stage", "!=", Closed_Lost]]
+    filter_fields:
+      - stage
+      - lead_source
+      - account
+      - name
+  lost:
+    label: 已失败的业务机会
+    columns:
+      - field: name
+        width: 220
+      - field: account
+        width: 280
+      - field: amount
+        width: 120
+      - field: lead_source
+        width: 120
+      - field: loss_reason
+        width: 220
+      - field: owner
+        width: 120
+    filter_scope: space
+    filters: [["stage", "=", Closed_Lost]]
+    filter_fields:
+      - loss_reason
+      - lead_source
+      - account
+      - name
+  won:
+    label: 已成功的业务机会
+    columns:
+      - field: name
+        width: 220
+      - field: amount
+        width: 120
+      - field: amount
+        width: 180
+      - field: lead_source
+        width: 120
+      - field: owner
+        width: 120
+    filter_scope: space
+    filters: [["stage", "=", Closed_Won]]
+    filter_fields:
+      - lead_source
+      - account
+      - name
   all:
     label: 全部业务机会
     columns:
-      - name
-      - account
-      - amount
-      - due_date
-      - stage
-      - probability
-      - lead_source
-      - owner
+      - field: name
+        width: 220
+      - field: account
+        width: 280
+      - field: amount
+        width: 120
+      - field: due_date
+        width: 120
+      - field: stage
+        width: 160
+      - field: probability
+        width: 120
+      - field: lead_source
+        width: 120
+      - field: owner
+        width: 120
     filter_scope: space
     filter_fields:
       - stage
@@ -123,14 +198,22 @@ list_views:
   recent:
     label: 最近查看
     columns:
-      - name
-      - account
-      - amount
-      - due_date
-      - stage
-      - probability
-      - lead_source
-      - owner
+      - field: name
+        width: 220
+      - field: account
+        width: 280
+      - field: amount
+        width: 120
+      - field: due_date
+        width: 120
+      - field: stage
+        width: 160
+      - field: probability
+        width: 120
+      - field: lead_source
+        width: 120
+      - field: owner
+        width: 120
     filter_scope: space
     filter_fields:
       - stage
@@ -138,16 +221,24 @@ list_views:
       - account
       - name
   mine:
-    label: 我的客户
+    label: 我的业务机会
     columns:
-      - name
-      - account
-      - amount
-      - due_date
-      - stage
-      - probability
-      - lead_source
-      - owner
+      - field: name
+        width: 220
+      - field: account
+        width: 280
+      - field: amount
+        width: 120
+      - field: due_date
+        width: 120
+      - field: stage
+        width: 160
+      - field: probability
+        width: 120
+      - field: lead_source
+        width: 120
+      - field: owner
+        width: 120
     filter_scope: mine
     filter_fields:
       - stage

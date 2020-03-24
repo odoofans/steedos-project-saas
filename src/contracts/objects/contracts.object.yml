@@ -187,9 +187,9 @@ list_views:
       - field: owner
         width: 120
       - field: start_date
-        width: 120
+        width: 150
       - field: end_date
-        width: 120
+        width: 150
     filter_scope: space
     filter_fields:
       - contract_type
@@ -245,7 +245,7 @@ list_views:
       }
     columns:
       - field: create_date
-        width: 120
+        width: 150
       - field: "no"
         width: 150
         wrap: true
@@ -296,7 +296,7 @@ list_views:
       }
     columns:
       - field: create_date
-        width: 120
+        width: 150
       - field: "no"
         width: 150
         wrap: true

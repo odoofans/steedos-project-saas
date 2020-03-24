@@ -90,7 +90,7 @@ list_views:
       }
     columns:
       - field: real_date
-        width: 120
+        width: 150
       - field: name
         width: 220
       - field: contract
@@ -112,9 +112,9 @@ list_views:
     label: 所有
     columns:
       - field: due_date
-        width: 120
+        width: 150
       - field: real_date
-        width: 120
+        width: 150
       - field: name
         width: 220
       - field: contract
@@ -140,9 +140,9 @@ list_views:
     filter_scope: space
     filter_fields:
       - field: due_date
-        width: 120
+        width: 150
       - field: real_date
-        width: 120
+        width: 150
       - field: name
         width: 220
       - field: contract

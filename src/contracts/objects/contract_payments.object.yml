@@ -61,7 +61,7 @@ list_views:
       }
     columns:
       - field: due_date
-        width: 120
+        width: 150
       - field: name
         width: 220
       - field: contract

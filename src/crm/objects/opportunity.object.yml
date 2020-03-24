@@ -156,6 +156,8 @@ list_views:
     columns:
       - field: name
         width: 220
+      - field: account
+        width: 280
       - field: amount
         width: 120
       - field: amount

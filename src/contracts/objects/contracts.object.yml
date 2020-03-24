@@ -171,7 +171,7 @@ list_views:
       }
     columns:
       - field: create_date
-        width: 120
+        width: 150
         wrap: true
       - field: name
         width: 280

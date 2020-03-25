@@ -8,6 +8,7 @@ enable_tasks: true
 enable_api: true
 enable_chatter: true
 enable_audit: true
+enable_workflow: true
 fields:
   name:
     label: 合同名称
@@ -115,8 +116,6 @@ fields:
         value: terminated
       - label: 已签订
         value: signed
-      - label: 已归档
-        value: archived
       - label: 已作废
         value: droped
       - label: 已完成

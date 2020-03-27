@@ -15,6 +15,7 @@ let config = {
                 ["inbox_users", "=", "{userId}"], "or", ["cc_users", "=", "{userId}"]
             ]
         ],
+        "sort": "modified desc",
         "columns": [{
             "label": "名称",
             "field": "name",

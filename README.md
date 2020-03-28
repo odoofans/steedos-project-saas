@@ -12,6 +12,7 @@ npm config set registry http://registry.npm.taobao.org/
 ```
 yarn
 ```
+> 前端相关包依赖在webapp/package.json中，根目录执行yarn指令可以自动安装相关依赖包并打包前端脚本到项目中
 
 ### 启动服务器
 ```

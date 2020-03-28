@@ -6,10 +6,6 @@ WORKDIR /app
 
 RUN npm config set registry http://registry.npm.taobao.org/
 
-RUN npm i yarn -g
-
-RUN npm install -g typescript
-
 RUN yarn config set registry http://registry.npm.taobao.org/
 
 RUN yarn install --production

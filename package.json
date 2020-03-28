@@ -8,6 +8,7 @@
         "start": "node --max-old-space-size=2048 --stack_trace_limit=200 server.js",
         "build": "yarn buildClient",
         "buildClient": "cd webapp && yarn && yarn build && cd ..",
+        "prepare": "yarn build",
         "test": "echo \"Error: no test specified\" && exit 1",
         "os": "cp -r ../object-server/packages/* node_modules/@steedos/",
         "oss": "cp -r ../object-server/packages/standard-objects/* node_modules/@steedos/standard-objects/ && yarn start"

@@ -10,7 +10,6 @@ let config = {
         "type": "object",
         "objectName": "instances",
         "filters": [
-            ["space", "=", "{spaceId}"],
             [
                 ["inbox_users", "=", "{userId}"], "or", ["cc_users", "=", "{userId}"]
             ]

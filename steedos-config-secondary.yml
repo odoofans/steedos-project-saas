@@ -76,6 +76,8 @@ tenant:
   name: 华炎云
   enable_mobile_code_login: true
   enable_register: true
+  disable_email_register: true
+  enable_bind_mobile: true
 webservices:
   steedos: ${ENV_CREATOR_URL}
 accounts:

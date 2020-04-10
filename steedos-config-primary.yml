@@ -100,5 +100,7 @@ tenant:
   enable_password_login: true
   name: 华炎云
   enable_mobile_code_login: true
+  disable_email_register: true
+  enable_bind_mobile: true
 accounts:
   mobile_phone_locales: ['zh-CN']

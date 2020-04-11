@@ -2,7 +2,7 @@
 
 华炎办公是深受公司员工喜爱的云端企业管理软件，可以帮助您的团队随时随地的沟通与协作。
 
-![华炎办公界面效果图](https://www.steedos.com/assets/products/workflow.png)
+![华炎办公界面效果图](https://steedos.com/assets/products/workflow.png)
 
 华炎办公基于[开源低代码开发平台华炎魔方](https://www.steedos.com/platform/)开发，内置审批、公告、知识、任务、日程等常用办公管理功能，并嵌入了合同管理、CRM等标准模块。系统内核所有业务对象均可进行扩展或者自定义。
 

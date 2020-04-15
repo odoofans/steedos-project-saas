@@ -5,7 +5,6 @@ icon_slds: groups
 is_creator: true
 sort: 100
 objects: 
-  - oa_home
   - instances
   - cms_posts
   - announcements

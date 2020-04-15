@@ -3,3 +3,4 @@ node_modules
 .migrate
 isolate-*.log
 .yalc
+.DS_Store

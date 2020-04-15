@@ -1,8 +1,7 @@
 _id: home
-name: 华炎办公首页
+name: 默认首页
 apps: 
   - oa
-  - contracts
 widgets: 
   - position: CENTER_TOP
     type: instances_pendings

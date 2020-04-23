@@ -933,9 +933,10 @@
   resolved "https://registry.npm.taobao.org/@steedos/standard-objects/download/@steedos/standard-objects-1.19.3.tgz#407b0b25ce9e0af606b6cdd11cbcf6c255b126ee"
   integrity sha1-QHsLJc6eCvYGts3RHLz2wlWxJu4=
 
-"@steedos/steedos-plugin-workflow@^2.0.6":
-  version "2.0.6"
-  resolved "https://registry.npm.taobao.org/@steedos/steedos-plugin-workflow/download/@steedos/steedos-plugin-workflow-2.0.6.tgz#732df22b8fe345b731ae0c54dba56dd4db8cc370"
+"@steedos/steedos-plugin-workflow@^2.0.7":
+  version "2.0.7"
+  resolved "https://registry.npm.taobao.org/@steedos/steedos-plugin-workflow/download/@steedos/steedos-plugin-workflow-2.0.7.tgz#153b028d7c86f0941c37245f4c1591ddd6fd9e2f"
+  integrity sha1-FTsCjXyG8JQcNyRfTBWR3db9ni8=
   dependencies:
     body-parser "^1.19.0"
     express "^4.17.1"

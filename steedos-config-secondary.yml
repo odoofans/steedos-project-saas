@@ -32,6 +32,8 @@ public:
   cloudAdminSpaceId: cloud_admin
   templateSpaceId: 5e38d51b41386900110ff5c5
   is_group_company: true
+  workflow:
+    hideLastSignApproveDescription: true
 cfs:
   aliyun:
     region: ${ENV_CFS_ALIYUN_REGION}

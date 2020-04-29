@@ -16,10 +16,12 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "dotenv-flow": "^3.1.0",
-        "@steedos/steedos-plugin-workflow": "^2.0.7",
         "@steedos/accounts": "^1.19.2",
-        "steedos-server": "^1.19.5"
+        "@steedos/steedos-plugin-workflow": "^2.0.7",
+        "aliyun-sdk": "1.12.3",
+        "dotenv-flow": "^3.1.0",
+        "steedos-server": "^1.19.6",
+        "xiaomi-push": "1.0.0"
     },
     "devDependencies": {
         "nodemon": "^1.19.1"

@@ -55,7 +55,7 @@ services:
 
   primary:
     image: steedos-project-saas_steedos1:latest
-    restart: true
+    restart: always
     volumes:
       - /srv/workflow/cfs:/storage
       - ./src:/app/src

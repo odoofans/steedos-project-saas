@@ -1,0 +1,13 @@
+contract_receipts__object: 收款
+contract_receipts_field_account: 付款方
+contract_receipts_field_amount: 收款金额
+contract_receipts_field_amount_description: 收款说明
+contract_receipts_field_contract: 合同
+contract_receipts_field_due_date: 计划收款时间
+contract_receipts_field_finished: 已完成
+contract_receipts_field_name: 名称
+contract_receipts_field_real_date: 实际收款时间
+contract_receipts_listview_all: 所有
+contract_receipts_listview_pending: 待收款
+contract_receipts_listview_receipted: 已收款
+contract_receipts_listview_recent: 最近查看

@@ -1,0 +1,16 @@
+contacts__object: 联系人
+contacts_field_account: 业务伙伴
+contacts_field_birthdate: 生日
+contacts_field_department: 部门
+contacts_field_description: 备注
+contacts_field_email: 邮件
+contacts_field_fax: 传真
+contacts_field_home_phone: 家庭电话
+contacts_field_mailing_address: 地址
+contacts_field_mobile: 手机
+contacts_field_name: 姓名
+contacts_field_phone: 工作电话
+contacts_field_title: 职务
+contacts_listview_all: 所有联系人
+contacts_listview_mine: 我的联系人
+contacts_listview_recent: 最近查看

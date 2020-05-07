@@ -1,0 +1,13 @@
+contract_payments__object: 付款
+contract_payments_field_account: 收款方
+contract_payments_field_amount: 付款金额
+contract_payments_field_amount_description: 付款说明
+contract_payments_field_contract: 合同
+contract_payments_field_due_date: 计划付款时间
+contract_payments_field_finished: 已完成
+contract_payments_field_name: 名称
+contract_payments_field_real_date: 实际付款时间
+contract_payments_listview_all: 所有
+contract_payments_listview_payed: 已付款
+contract_payments_listview_recent: 最近查看
+contract_payments_listview_unpayed: 待付款

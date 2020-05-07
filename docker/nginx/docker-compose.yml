@@ -1,5 +1,5 @@
 nginx:
-  image: steedos/nginx-logrotate:1.16.1
+  image: steedos/nginx-sticky:1.16.1
   ports:
     - "80:80"
     - "443:443"

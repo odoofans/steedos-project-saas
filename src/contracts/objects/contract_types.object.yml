@@ -1,16 +1,16 @@
 name: contract_types
 icon: record
-label: 合同分类
+label: Contract Type
 fields:
   name:
     type: text
-    label: 名称
+    label: Name
     name: name
     searchable: true
     required: true
   code:
     type: text
-    label: 编码
+    label: Code
     name: code
 permission_set:
   user:
@@ -36,7 +36,7 @@ permission_set:
     viewAllRecords: true
 list_views:
   all:
-    label: 全部
+    label: All
     filter_scope: space
     columns:
       - name

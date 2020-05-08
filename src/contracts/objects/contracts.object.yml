@@ -45,15 +45,15 @@ fields:
     type: select
     label: Type
     options:
-      - label: 付款合同
-        value: payment contract
-      - label: 收款合同
-        value: collection contract
+      - label: Payment Contract
+        value: payment_contract
+      - label: Collection Contract
+        value: collection_contract
     allowedValues:
-      - payment contract
-      - collection contract
+      - payment_contract
+      - collection_contract
     required: true
-    defaultValue: collection contract
+    defaultValue: collection_contract
   owner:
     label: Owner
     sortable: true
@@ -76,7 +76,7 @@ fields:
     label: Main Contents
     is_wide: true
   amount:
-    label: Contract Amount
+    label: Amount
     type: number
     scale: 2
     required: true
@@ -105,56 +105,56 @@ fields:
     label: Contract Status
     searchable: true
     options:
-      - label: 审批中
+      - label: Pending
         value: pending
-      - label: 已核准
+      - label: Approved
         value: approved
-      - label: 已驳回
+      - label: Rejected
         value: rejected
-      - label: 已取消
+      - label: Terminated
         value: terminated
-      - label: 已签订
+      - label: Signed
         value: signed
-      - label: 已作废
+      - label: Droped
         value: droped
-      - label: 已完成
+      - label: Completed
         value: completed
     omit: false
     hidden: false
   contract_fulfillment_state:
     type: select
-    label: Contract Fulfillment Status
+    label: Fulfillment Status
     searchable: true
     options:
-      - label: 履行中
+      - label: Fulfilling
         value: fulfilling
-      - label: 履行完
+      - label: Fulfillment
         value: fulfillment
-      - label: 已取消
+      - label: Terminated
         value: terminated
   paid_amount:
-    label: Total Amount Paid
+    label: Paid Amount
     type: number
     scale: 2
     sortable: true
     readonly: true
     defaultValue: 0
   unpaid_amount:
-    label: Total Amount Unpaid
+    label: Unpaid Amount
     type: number
     scale: 2
     sortable: true
     readonly: true
     defaultValue: 0
   received_amount:
-    label: Total Amount Received
+    label: Received Amount
     type: number
     scale: 2
     sortable: true
     readonly: true
     defaultValue: 0
   unreceived_amount:
-    label: Total Amount Unreceived
+    label: Unreceived Amount
     type: number
     scale: 2
     sortable: true
@@ -162,7 +162,7 @@ fields:
     defaultValue: 0
 list_views:
   all:
-    label: All Valid Contracts
+    label: All
     filters: !<tag:yaml.org,2002:js/function> |-
       function () {
           return [
@@ -278,7 +278,7 @@ list_views:
     filters: !<tag:yaml.org,2002:js/function> |-
       function () {
           return [
-            ["bop","=","payment contract"],
+            ["bop","=","payment_contract"],
             ["instance_state","<>","terminated"], "and",["instance_state","<>","pending"], "and",["instance_state","<>","rejected"], "and",["instance_state","<>","droped"]
           ];
       }
@@ -329,7 +329,7 @@ list_views:
     filters: !<tag:yaml.org,2002:js/function> |-
       function () {
           return [
-            ["bop","=","collection contract"],
+            ["bop","=","collection_contract"],
             ["instance_state","<>","terminated"], "and",["instance_state","<>","pending"], "and",["instance_state","<>","rejected"], "and",["instance_state","<>","droped"]
           ];
       }
@@ -375,7 +375,7 @@ list_views:
       - - create_date
         - desc
   all_pending:
-    label: All Pending Contracts
+    label: All Pending
     filter_scope: space
     filters: !<tag:yaml.org,2002:js/function> |-
       function () {
@@ -412,7 +412,7 @@ list_views:
       - - create_date
         - desc
   all_invalid:
-    label: All Invalid Contracts
+    label: All Invalid
     filter_scope: space
     filters: !<tag:yaml.org,2002:js/function> |-
       function () {

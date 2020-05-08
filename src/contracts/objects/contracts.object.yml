@@ -18,7 +18,7 @@ fields:
   no:
     type: autonumber
     formula: "{YYYY}-{000}"
-    label: 合同编号
+    label: Contract Number
     sortable: true
     filterable: true
     omit: true
@@ -26,83 +26,83 @@ fields:
   othercompany:
     type: lookup
     relatedList: true
-    label: 业务伙伴
+    label: Accounts
     searchable: true
     reference_to: accounts
     required: true
   contract_type:
     type: lookup
-    label: 分类
+    label: Contract Type
     reference_to: contract_types
     required: true
   create_date:
-    label: 登记日期
+    label: Create Date
     type: date
     sortable: true
     filterable: true
     defaultValue: "{now}"
   bop:
     type: select
-    label: 收支类别
+    label: Type
     options:
       - label: 付款合同
-        value: 付款合同
+        value: payment contract
       - label: 收款合同
-        value: 收款合同
+        value: collection contract
     allowedValues:
-      - 付款合同
-      - 收款合同
+      - payment contract
+      - collection contract
     required: true
-    defaultValue: 收款合同
+    defaultValue: collection contract
   owner:
-    label: 执行人
+    label: Owner
     sortable: true
     type: lookup
     reference_to: users
     omit: false
     hidden: false
   created_by:
-    label: 创建人
+    label: Created By
     sortable: true
     type: lookup
     reference_to: users
   modified_by:
-    label: 修改人
+    label: Modified By
     sortable: true
     type: lookup
     reference_to: users
   subject:
     type: textarea
-    label: 合同主要内容
+    label: Main Contents
     is_wide: true
   amount:
-    label: 合同金额
+    label: Contract Amount
     type: number
     scale: 2
     required: true
     sortable: true
   signed_date:
-    label: 签订日期
+    label: Signed Date
     type: date
     sortable: true
     filterable: true
   start_date:
-    label: 开始日期
+    label: Start Date
     type: date
     sortable: true
     filterable: true
   end_date:
-    label: 结束日期
+    label: End Date
     type: date
     sortable: true
     filterable: true
   remark:
-    label: 备注
+    label: Remark
     type: textarea
     is_wide: true
   instance_state:
     type: select
-    label: 合同状态
+    label: Contract Status
     searchable: true
     options:
       - label: 审批中
@@ -123,38 +123,38 @@ fields:
     hidden: false
   contract_fulfillment_state:
     type: select
-    label: 合同履行状态
+    label: Contract Fulfillment Status
     searchable: true
     options:
       - label: 履行中
-        value: 履行中
+        value: fulfilling
       - label: 履行完
-        value: 履行完
+        value: fulfillment
       - label: 已取消
-        value: 已取消
+        value: terminated
   paid_amount:
-    label: 已支付总金额
+    label: Total Amount Paid
     type: number
     scale: 2
     sortable: true
     readonly: true
     defaultValue: 0
   unpaid_amount:
-    label: 未支付付款总金额
+    label: Total Amount Unpaid
     type: number
     scale: 2
     sortable: true
     readonly: true
     defaultValue: 0
   received_amount:
-    label: 已收款总金额
+    label: Total Amount Received
     type: number
     scale: 2
     sortable: true
     readonly: true
     defaultValue: 0
   unreceived_amount:
-    label: 未收款总金额
+    label: Total Amount Unreceived
     type: number
     scale: 2
     sortable: true
@@ -162,7 +162,7 @@ fields:
     defaultValue: 0
 list_views:
   all:
-    label: 所有有效合同
+    label: All Valid Contracts
     filters: !<tag:yaml.org,2002:js/function> |-
       function () {
           return [
@@ -202,7 +202,7 @@ list_views:
       - - create_date
         - desc
   recent:
-    label: 最近查看
+    label: Recently Viewed
     filter_scope: space
     filters: !<tag:yaml.org,2002:js/function> |-
       function () {
@@ -219,7 +219,7 @@ list_views:
       - - create_date
         - desc
   mine:
-    label: 我的有效合同
+    label: My Valid Contracts
     filter_scope: mine
     filters: !<tag:yaml.org,2002:js/function> |-
       function () {
@@ -236,7 +236,7 @@ list_views:
       - - create_date
         - desc
   mine_invalid:
-    label: 我的其他合同
+    label: My Other Contracts
     filter_scope: mine
     filters: !<tag:yaml.org,2002:js/function> |-
       function () {
@@ -273,12 +273,12 @@ list_views:
       - - create_date
         - desc
   contract_payments:
-    label: 付款合同
+    label: Payment Contract
     filter_scope: space
     filters: !<tag:yaml.org,2002:js/function> |-
       function () {
           return [
-            ["bop","=","付款合同"],
+            ["bop","=","payment contract"],
             ["instance_state","<>","terminated"], "and",["instance_state","<>","pending"], "and",["instance_state","<>","rejected"], "and",["instance_state","<>","droped"]
           ];
       }
@@ -324,12 +324,12 @@ list_views:
       - - create_date
         - desc
   contract_receipts:
-    label: 收款合同
+    label: Collection Contract
     filter_scope: space
     filters: !<tag:yaml.org,2002:js/function> |-
       function () {
           return [
-            ["bop","=","收款合同"],
+            ["bop","=","collection contract"],
             ["instance_state","<>","terminated"], "and",["instance_state","<>","pending"], "and",["instance_state","<>","rejected"], "and",["instance_state","<>","droped"]
           ];
       }
@@ -375,7 +375,7 @@ list_views:
       - - create_date
         - desc
   all_pending:
-    label: 所有审批中的合同
+    label: All Pending Contracts
     filter_scope: space
     filters: !<tag:yaml.org,2002:js/function> |-
       function () {
@@ -412,7 +412,7 @@ list_views:
       - - create_date
         - desc
   all_invalid:
-    label: 所有无效合同
+    label: All Invalid Contracts
     filter_scope: space
     filters: !<tag:yaml.org,2002:js/function> |-
       function () {
